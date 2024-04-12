@@ -1,13 +1,8 @@
-import os
+
 import streamlit as st
 import pickle
-file_path = os.path.join(os.path.dirname(__file__), 'vectorizer.pkl')
 
-# Load the pickled object
-with open(file_path, 'rb') as file:
-    tfidf = pickle.load(file)
-
-#tfidf = pickle.load(open('vectorizer.pkl', 'rb'))
+tfidf = pickle.load(open('vectorizer.pkl', 'rb'))
 mnb = pickle.load(open('model.pkl', 'rb'))
 st.title("Email spam detection")
 
